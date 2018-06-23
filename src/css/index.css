@@ -107,7 +107,6 @@ body{
 #root #main{
 	position: relative;
 	margin-top: 30px;
-	font-size: 14px;
 }
 
 #main #menu{
@@ -128,6 +127,7 @@ body{
 			list-style: none;
 			margin: 2px 0;
 		}
+
 		& a{
 			display: block;
 			text-decoration: none;
@@ -135,7 +135,7 @@ body{
 			/*font-weight: 300;*/
 			padding: 2px 2px;
 		}
-		& a:hover,& a.important:hover{
+		& a:hover,& a.important:hover,& li.selected a{
 			color: #fff;
 			background: var(--secColor);
 		    box-shadow: 0 1px 1px 0px #a6a1a1;
@@ -161,7 +161,8 @@ body{
 #main #context{
 	width: 100%;
 	padding-left: 300px;	
-
+	font-size: 14px;
+	
 }
 
 

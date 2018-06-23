@@ -6,6 +6,7 @@ import Introduction from './introduction.js'
 import Register from './register.js'
 import Travel from './travel.js'
 import Guide from './guide.js'
+import Supportors from './supportors.js'
 
 class Context extends Component{
 	constructor(props){
@@ -19,6 +20,7 @@ class Context extends Component{
 				<Route exact path="/register" component={Register}/>
 				<Route exact path="/travel" component={Travel}/>
 				<Route exact path="/guide" component={Guide}/>
+				<Route exact path="/supportors" component={Supportors}/>
 			</div>
 		)
 	}
