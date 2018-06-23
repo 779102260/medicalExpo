@@ -107,6 +107,7 @@ body{
 #root #main{
 	position: relative;
 	margin-top: 30px;
+	font-size: 14px;
 }
 
 #main #menu{
@@ -304,6 +305,7 @@ body{
 	& .map{
 		overflow: hidden;
 		position: relative;
+		line-height: 30px;
 		& #baiduMap,& .textInter{
 			float: left;
 		}
@@ -316,22 +318,55 @@ body{
 			padding-left: 20px;
 			position: absolute;
 			left: 500px;
-			bottom: 0;
+			top: 0;
 
-			& p{
-				padding: 10px 0;
+			& i{
+				color: var(--secColor)
+			}
+			& a{
+				border:none;
 			}
 		}
 	}
 
 	& .hotels{
 		& .hotel{
-			overflow: hidden;
-			& .hotel_pic,& .hotel_content{
-				float: left;
+			margin: 50px 0;
+			position: relative;
+			& .hotel_pic{
+				& img{
+					width: 250px;
+				}
 			}
 			& .hotel_content{
+				position: absolute;
+				left: 250px;
+				top: 0;
+				bottom: 0;
+				padding:0 10px;
+				line-height: 30px;
+				overflow-y: auto;
 
+				& .hotel_head{
+					font-size: 20px;
+					color: var(--secColor);
+					font-weight: 600;
+					padding-bottom: 20px;
+					& a{
+						border-bottom:1px  solid;
+					}
+					& a:hover{
+						color: var(--firstColor);
+						cursor: pointer;
+					}
+					& .hotel_score{
+						padding: 2px 20px;
+						color: #f00;
+					}
+					& .hotel_inter{
+						line-height: 25px;
+					}
+				} 
 			}
 		}
 	}
