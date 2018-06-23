@@ -6,6 +6,8 @@ import Introduction from './introduction.js'
 import Register from './register.js'
 import Travel from './travel.js'
 import Guide from './guide.js'
+import Booth from './booth.js'
+import Business from './business.js'
 
 class Context extends Component{
 	constructor(props){
@@ -19,6 +21,9 @@ class Context extends Component{
 				<Route exact path="/register" component={Register}/>
 				<Route exact path="/travel" component={Travel}/>
 				<Route exact path="/guide" component={Guide}/>
+				<Route exact path="/booth" component={Booth}/>
+				<Route exact path="/business" component={Business}/>
+				
 			</div>
 		)
 	}

@@ -21,8 +21,8 @@ class Menu extends Component{
 					<li><Link to="/register">赞助伙伴</Link></li>
 					<li><Link to="/register">赞助机制</Link></li>
 					<li className="title">招商</li>
-					<li><Link to="/register">展位规划</Link></li>
-					<li><Link to="/register">展位招商</Link></li>
+					<li><Link to="/booth">展位规划</Link></li>
+					<li><Link to="/business">展位招商</Link></li>
 					<li className="title">专家</li>
 					<li><Link to="/register">演讲专家</Link></li>
 					<li><Link to="/register">论文征集</Link></li>
