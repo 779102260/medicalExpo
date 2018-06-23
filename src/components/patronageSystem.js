@@ -1,0 +1,151 @@
+import boothCss from '../css/booth.css'
+
+class PatronageSystem extends Component{
+	render(){
+		return (
+			<div className="booth psystem">
+				<h3>大会金、银、铜牌赞助</h3>
+				<p>
+					金牌赞助商RMB 500,000  (限1家)、
+					银牌赞助商RMB 300,000 （限5家）、铜牌赞助商RMB 200,000 （限10家）
+				</p>
+				<table>
+					<thead>
+						<tr>
+							<td className="out">
+								<span className="hb">回报</span>
+								<span className="line"></span>
+								<span className="level">赞助等级（人民币）</span>
+							</td>
+							<td>金牌赞助（1）<br/>800,000</td>
+							<td>银牌赞助（5）<br/>500,000</td>
+							<td>铜牌赞助（10 <br/>200,000</td>
+						</tr>
+						<tr>
+							<td>免费标准展位</td>
+							<td>90m2</td>
+							<td>36m2</td>
+							<td>18m2</td>
+						</tr>
+						<tr>
+							<td>免费参会注册名额</td>
+							<td>20</td>
+							<td>10</td>
+							<td>5</td>
+						</tr>
+						<tr>
+							<td>赞助商LOGO展示</td>
+							<td>√</td>
+							<td>√</td>
+							<td>√</td>
+						</tr>
+						<tr>
+							<td>大会主背景板</td>
+							<td>√</td>
+							<td>√</td>
+							<td>√</td>
+						</tr>
+						<tr>
+							<td>大会证件广告</td>
+							<td>√</td>
+							<td>×</td>
+							<td>×</td>
+						</tr>
+						<tr>
+							<td>享有大会至尊合作伙伴荣誉</td>
+							<td>√</td>
+							<td>√</td>
+							<td>√</td>
+						</tr>
+						<tr>
+							<td>名录赞助商网站的链接放在会议网站主页</td>
+							<td>√</td>
+							<td>√</td>
+							<td>√</td>
+						</tr>
+						<tr>
+							<td>主会场暖场及茶歇时间播放赞助商宣传</td>
+							<td>√</td>
+							<td>√</td>
+							<td>√</td>
+						</tr>
+						<tr>
+							<td>会刊中赠送彩色插页广告</td>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>大会资料包插页</td>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>开幕式演讲</td>
+							<td>√</td>
+							<td>×</td>
+							<td>×</td>
+						</tr>
+						<tr>
+							<td>学术论坛演讲</td>
+							<td>×</td>
+							<td>√</td>
+							<td>×</td>
+						</tr>
+						<tr>
+							<td>对接环节项目路演</td>
+							<td>×</td>
+							<td>×</td>
+							<td>√</td>
+						</tr>
+						<tr>
+							<td>欢迎晚宴冠名</td>
+							<td>√</td>
+							<td>×</td>
+							<td>×</td>
+						</tr>
+						<tr>
+							<td>会议期间午餐、晚餐冠名</td>
+							<td>×</td>
+							<td>√</td>
+							<td>×</td>
+						</tr>
+						<tr>
+							<td>茶歇冠名</td>
+							<td>×</td>
+							<td>×</td>
+							<td>√</td>
+						</tr>
+						<tr>
+							<td>贵宾礼遇</td>
+							<td>√</td>
+							<td>√</td>
+							<td>√</td>
+						</tr>
+						<tr>
+							<td>赞助商代表在大会贵宾席就座</td>
+							<td>2人</td>
+							<td>1人</td>
+							<td>1人</td>
+						</tr>
+						<tr>
+							<td>同期活动——专场推介会</td>
+							<td>90分钟</td>
+							<td>45分钟</td>
+							<td>×</td>
+						</tr>
+						<tr>
+							<td>媒体专访</td>
+							<td>√</td>
+							<td>×</td>
+							<td>×</td>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		)
+	}
+}
+
+export default PatronageSystem

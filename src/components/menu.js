@@ -31,7 +31,7 @@ class Menu extends Component{
 					<li onClick={this.click}><Link to="/guide">指南</Link></li>
 					<li className="title">赞助</li>
 					<li onClick={this.click}><Link to="/supportors">赞助伙伴</Link></li>
-					<li onClick={this.click}><Link to="/register">赞助机制</Link></li>
+					<li onClick={this.click}><Link to="/patronageSystem">赞助机制</Link></li>
 					<li className="title">招商</li>
 					<li><Link to="/booth">展位规划</Link></li>
 					<li><Link to="/business">展位招商</Link></li>
