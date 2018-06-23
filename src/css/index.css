@@ -1,0 +1,338 @@
+:root{
+	--maxWidth: 1260px;
+	
+
+	--bgColor:#fff;
+	--firstColor:#cf202c;
+	--secColor:#283375;
+
+	--aritcal:{
+		line-height: 36px;
+		text-indent: 2rem;
+
+		& p{
+			margin: 0 0px 20px 0;
+		}
+	};
+}
+
+@font-face {
+    font-family: myFont;
+    src: url('../font/JTURjIg1_i6t8kCHKm45_cJD3gnD_g.woff2');
+}
+@font-face {
+    font-family: myFont2;
+    src: url('../font/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2');
+}
+body{
+	font-family: 'myFont',sans-serif;
+}
+#root{
+	position: relative;
+	max-width: var(--maxWidth);
+	margin: 10px auto;
+}
+#root #topHead{
+	height: 112px;
+	padding: 20px 0px;
+	overflow: hidden;
+
+	& .left,
+	& .center{
+		float: left;
+	}
+
+	& .left{
+		padding: 10px;
+
+		& .logo{
+			color:var(--firstColor);
+			font-size: 30px;
+		}
+		& .englishLogo{
+			color:var(--secColor);
+			word-spacing: 19px;
+		}
+	}
+
+	& .center{
+		width: 200px;
+		height: 100%;
+		position: relative;
+		padding: 0 20px;
+		
+		& .time{
+			position: absolute;
+			top: 15px;
+
+			& .timeText{
+				letter-spacing: 1px;
+				font-size: 20px;
+				font-family: myFont2;
+			}
+		}
+		& .address{
+			position: absolute;
+			bottom: 5px;
+		}
+		& .icon-time,
+		& .icon-map-marker{
+			color: var(--secColor)
+		}
+	}
+
+	& .right{
+		position: absolute;
+		top: 10px;
+		right: 0px;
+		
+
+		& .toggleLanguage{
+			padding: 2px;
+			width: 60Px;
+			margin-left: 50px;
+		}
+
+		& .login{
+			cursor: pointer;
+			color: var(--secColor)
+		}
+		& .login:hover{
+			color: var(--firstColor)
+		}
+	}
+}
+
+
+#root #main{
+	position: relative;
+	margin-top: 30px;
+}
+
+#main #menu{
+	width: 250px;
+	background: #f1f1f1;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0;
+    box-shadow: 1px 1px 1px 0 #ccc;
+    letter-spacing: 1px;
+
+	& >ul{
+		padding: 10px 0;
+		text-indent: 1rem;
+		
+		& li{
+			list-style: none;
+			margin: 2px 0;
+		}
+		& a{
+			display: block;
+			text-decoration: none;
+			color: #2c2b2b;
+			/*font-weight: 300;*/
+			padding: 2px 2px;
+		}
+		& a:hover,& a.important:hover{
+			color: #fff;
+			background: var(--secColor);
+		    box-shadow: 0 1px 1px 0px #a6a1a1;
+		}
+		& li.title{
+			padding: 4px 0;
+			margin: 5px 0;
+			/*font-weight: 600;*/
+			border-bottom: 1px solid #ccc;
+			color: var(--firstColor);
+			cursor: default;
+		}
+
+		& a.important{
+			color: #fff;
+			padding: 5px 2px;
+			background: var(--firstColor);
+		}
+
+	}
+}
+
+#main #context{
+	width: 100%;
+	padding-left: 300px;	
+
+}
+
+
+#context #introduction{
+	@apply --aritcal;
+
+	& img{
+		display: block;
+		text-indent: 1px;
+		width: 100%;
+	}
+}
+
+#context #register{
+	width: 600px;
+	margin: 0 auto;
+	& h4{
+		padding: 5px 5px;
+		/*background: #a9aab3;*/
+		color: var(--secColor);
+		margin-bottom: 20px;
+	    border-left: 2Px solid var(--secColor);
+	}
+	& h4:last-child{
+		margin-top: 20px;
+	}
+	& li{
+		list-style: none;
+		padding: 10px 10px;
+		margin-bottom: 20px;
+	    box-shadow: 0 1Px 2Px 0 #ccc;
+
+		& >span{
+			text-align: left;
+			display: inline-block;
+			width: 150px;
+			padding: 0px 20px;
+		}
+
+		& input{
+			font-size: 1rem;
+			line-height:16px;
+			padding: 2px;
+		}
+
+		& span.des{
+			color: #ccc;
+		}
+	}
+
+	& .confirm {
+		text-align: center;
+		margin-top: 50px;
+		background: var(--secColor);
+		color: #fff;
+		padding: 8px 100px;
+		cursor: pointer;
+	}
+
+	& span.notValidated{
+		padding-right: 0; 
+		width: 200px;
+		color: red !important;
+	}
+}
+ 
+
+#context #travel{
+	& .time{
+		position: relative;
+
+		& div:first-child{
+			& img{
+				width:200px;
+			}		
+		}
+		& div:last-child{
+			position: absolute;
+			bottom: 0;
+			left: 230px;
+
+			& p.title{
+				font-size: 20px;
+				font-weight: 600;
+				color: var(--secColor);
+				margin-bottom: 40px;
+			}
+
+			& p{
+				margin: 5px 0px;
+			}
+		}
+		& div{
+			float: left;
+		}
+	}
+
+	& .plan{
+		margin-top: 20px;
+
+		& .title{
+			text-align: center;
+			font-size: 24px;
+			font-weight: 600;
+			padding: 10px 0;
+			background: var(--secColor);
+			color: #fff;
+		}
+
+		& .planContent{
+			margin: 20px 0;
+
+			& .planTime{
+				border-bottom: 1px solid #ccc;
+			}
+			& >div{
+				margin: 15px 0;
+
+				& span.smallTitle{
+					padding:5px;
+					margin-right: 10px;
+					background: var(--secColor);
+					color: #fff;
+					border-radius: 5px;
+				}
+
+				& .smallContent{
+					& p{
+						text-indent: 2rem;
+						margin: 10px 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#context #guide{
+
+	& .map{
+		overflow: hidden;
+		position: relative;
+		& #baiduMap,& .textInter{
+			float: left;
+		}
+		& #baiduMap{
+			width: 500px;
+			height: 300px;
+			border: 1Px solid #ccc;
+		}
+		& .textInter{
+			padding-left: 20px;
+			position: absolute;
+			left: 500px;
+			bottom: 0;
+
+			& p{
+				padding: 10px 0;
+			}
+		}
+	}
+
+	& .hotels{
+		& .hotel{
+			overflow: hidden;
+			& .hotel_pic,& .hotel_content{
+				float: left;
+			}
+			& .hotel_content{
+
+			}
+		}
+	}
+}

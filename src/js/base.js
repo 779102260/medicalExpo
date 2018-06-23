@@ -7,7 +7,7 @@
         var clientWidth = docEI.clientWidth;
         if(!clientWidth) return;
         //14是字体大小，1440是开发时浏览器窗口的宽度，等比计算
-        docEI.style.fontSize = 14*(clientWidth/1440)+'px';
+        docEI.style.fontSize = 16*(clientWidth/1536)+'px';
     }
 
     if(!doc.addEventListener) return;

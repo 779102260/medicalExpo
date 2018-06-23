@@ -15,6 +15,7 @@ module.exports = merge(baseConfig, {
         new webpack.ProvidePlugin({
             $:'jquery',
             React:'react',
+            Component:['react','Component'],
             ReactDOM:'react-dom'
         })
     ]

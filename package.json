@@ -23,6 +23,7 @@
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^2.1.5",
     "postcss-pxtorem": "^4.0.1",
+    "react-router-dom": "^4.3.1",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.8.3",
