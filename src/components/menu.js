@@ -37,7 +37,7 @@ class Menu extends Component{
 					<li><Link to="/business">展位招商</Link></li>
 					<li className="title">专家</li>
 					<li onClick={this.click}><Link to="/register">演讲专家</Link></li>
-					<li onClick={this.click}><Link to="/register">论文征集</Link></li>
+					<li onClick={this.click}><Link to="/collection">论文征集</Link></li>
 					<li className="title">展示</li>
 					<li onClick={this.click}><Link to="/register">创赛成果展示</Link></li>
 					<li onClick={this.click}><Link to="/register">手术成果展示</Link></li>

@@ -203,7 +203,7 @@ body{
 		}
 
 		& input{
-			font-size: 1rem;
+			font-size: 16px;
 			line-height:16px;
 			padding: 2px;
 		}
@@ -367,6 +367,67 @@ body{
 						line-height: 25px;
 					}
 				} 
+
+				& .hotel_distance{
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+#context #supportors{
+
+	& .box{
+		display: inline-block;
+		padding: 20px 50px;
+		border:1px solid #bbb;
+		margin: 10px 10px;
+	}
+
+	& .box:hover{
+		background: var(--secColor);
+		color: #fff;
+		cursor: pointer;
+	}
+
+	& .supportors_head{
+		text-align: center;
+		font-size: 16px;
+
+		& >p{
+			width: 100px;
+			margin: 0 auto;
+			padding: 10px 0;
+			border-bottom: 1px solid var(--secColor);
+		}
+		& >div{
+			padding: 20px 50px;
+		}
+	}
+
+
+}
+
+
+#context #collection{
+	& .collection_title{
+		padding: 5px 10px;
+		border-left: 2Px solid var(--secColor);
+	}
+	& h4{
+		color: var(--secColor);
+		font-size: 16px;
+		margin: 20px 0;
+	}
+	& >div {
+		& ul{
+			padding: 10px;
+
+			& li{
+				list-style: circle;
+				padding: 2px 0;
+				margin: 2px 0;
 			}
 		}
 	}

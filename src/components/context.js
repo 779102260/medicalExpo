@@ -9,6 +9,7 @@ import Guide from './guide.js'
 import Supportors from './supportors.js'
 import Booth from './booth.js'
 import Business from './business.js'
+import Collection from './collection.js'
 
 class Context extends Component{
 	constructor(props){
@@ -25,6 +26,7 @@ class Context extends Component{
 				<Route exact path="/supportors" component={Supportors}/>
 				<Route exact path="/booth" component={Booth}/>
 				<Route exact path="/business" component={Business}/>
+				<Route exact path="/collection" component={Collection}/>
 			</div>
 		)
 	}
