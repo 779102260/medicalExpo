@@ -1,11 +1,81 @@
+import Register from './register.js'
 
+class RegWindow extends Component{
+	constructor(props){
+		super(props);
+	}
+	close(e){
+		let wrap=document.querySelector('.loginWrap');
+		ReactDOM.unmountComponentAtNode(wrap);
+		wrap.remove();
+	}
+	render(){
+		return(
+			<div className="RegWrap">
+				<div className="title">
+					<span>注册</span>
+					<p className="close" onClick={this.close}><i className="icon-remove"></i></p>
+				</div>
+				<Register/>
+			</div>
+		)
+	}
+}
+class Login extends Component{
+	constructor(props){
+		super(props);
+
+		this.close=this.close.bind(this);
+		this.reg=this.reg.bind(this);
+	}
+	close(e){
+		let wrap=document.querySelector('.loginWrap');
+		ReactDOM.unmountComponentAtNode(wrap);
+		wrap.remove();
+	}
+	reg(){
+		let wrap=document.querySelector('.loginWrap');
+		ReactDOM.unmountComponentAtNode(wrap);
+		ReactDOM.render(
+			<RegWindow />,
+			wrap
+		);
+	}
+	render(){
+		return(
+			<div id="login" ref={(dom)=>this.login=dom}>
+				<p className="close" onClick={this.close}><i className="icon-remove"></i></p>
+				<p className="title">登陆</p>
+				<p className="username">
+					<i className="icon-user"></i>
+					<input type="text" ref={(dom)=>{this.username=dom}} placeholder="　用户名"/>
+				</p>
+				<p className="pwd">
+					<i className="icon-key"></i>
+					<input type="text" ref={(dom)=>{this.pwd=dom}} placeholder="　密码"/>
+				</p>
+				<p className="load">登陆</p>
+				<p className="bottom"><span onClick={this.reg}>注册</span><span>忘记密码</span></p>
+			</div>
+		)
+	}
+}
 
 class TopHead extends Component{
 	constructor(props){
-		super(props)
+		super(props);
+
+		this.login=this.login.bind(this)
 	}
-
-
+	login(){
+		let loginWrap=document.createElement('div');
+		loginWrap.className='loginWrap';
+		document.body.append(loginWrap);
+		ReactDOM.render(
+			<Login />,
+			loginWrap
+		);
+	}
 	render(){
 		return(
 			<div id="topHead">
@@ -18,7 +88,7 @@ class TopHead extends Component{
 					<p className="address"><span className="icon-map-marker"></span><span>{lan.address}</span></p>
 				</div>
 				<div className="right">
-					<span className="login">登陆</span>
+					<span className="login" onClick={this.login}>登陆</span>
 					<select className="toggleLanguage">
 						<option value="zh">
 							中文

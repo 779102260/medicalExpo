@@ -21,7 +21,7 @@ export default class Contact extends Component{
 					</div>
 
 					<div className="person">
-						<p className="name">修玥</p>
+						<p className="name"><i className="icon-user-md"></i>　修玥</p>
 						<p><i className="icon-phone-sign"></i>　+86-10-13121090728</p>
 						<p><i className="icon-envelope-alt"></i>　xiuyue@ittn.com.cn</p>
 					</div>

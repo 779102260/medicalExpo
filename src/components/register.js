@@ -41,7 +41,7 @@ class Register extends Component{
 		let val=ele.value;
 		if(!reg.test(val)){
 			ele.nextElementSibling.className+=' notValidated';
-			ele.nextElementSibling.innerText='* 填写的手机号有误';
+			ele.nextElementSibling.innerText='* 手机号有误';
 			return false;
 		}else{
 			ele.nextElementSibling.className='des';
@@ -74,7 +74,7 @@ class Register extends Component{
 		let pwd2=ele.value;
 		if(pwd!==pwd2){
 			ele.nextElementSibling.className+=' notValidated';
-			ele.nextElementSibling.innerText='* 两次输入密码不一致';
+			ele.nextElementSibling.innerText='* 密码不一致';
 			return false;
 		}else{
 			ele.nextElementSibling.className='des';
