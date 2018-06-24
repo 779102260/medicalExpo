@@ -1,46 +1,71 @@
+import hz1 from '../images/coop/1.jpg'
+import hz2 from '../images/coop/2.jpg'
+import hz3 from '../images/coop/3.jpg'
+import hz4 from '../images/coop/4.jpg'
+import hz5 from '../images/coop/5.jpg'
+import hz6 from '../images/coop/6.jpg'
+import hz7 from '../images/coop/7.jpg'
+import hz14 from '../images/coop/14.jpg'
 
+import connect from '../context.js';
 /*
-
 url 点击链接
 pic 图片
-text 文字
 */
 class Box extends Component{
 	constructor(props){
 		super(props);
 		this.click=this.click.bind(this);
 	}
+	componentWillReceiveProps(nextProps){
+        window.scrollTo(0,0)
+    }
 	click(e){
-		window.open(this.props.url,'_blank');
+		// window.open(this.props.url,'_blank');
 	}
 	render(){
 		return(
-			<div className="box" onClick={this.click}>
-				{this.props.pic && <img src={this.props.pic} alt="" className="log"/>}
-				<span>{this.props.text}</span>
+			<div className="box" onClick={this.click} title={this.props.name}>
+				{this.props.pic && <img src={this.props.pic}  className="log"/>}
+				{/*<span>{this.props.text}</span>*/}
 			</div>
 		)
 	}
 }
 
-export default class Supportors extends Component{
+class Supportors extends Component{
 	constructor(props){
 		super(props);
 	}
 
 	render(){
+		let lan=this.props.ctx.lan;
+		
+		let coops=lan.coops;
 		let cooperation=[{
-			text:'科技部中国生物技术发展中心'
+			pic:hz1,
+			name:coops.hz1
 		},{
-			text:'中国医学装备协会'
+			pic:hz2,
+			name:coops.hz2
 		},{
-			text:'中国医疗器械行业协会'
+			pic:hz3,
+			name:coops.hz3
 		},{
-			text:'北京健康促进会'
+			pic:hz4,
+			name:coops.hz4
 		},{
-			text:'中关村发展集团'
+			pic:hz5,
+			name:coops.hz5
 		},{
-			text:'中关村医疗器械园'
+			pic:hz6,
+			name:coops.hz6
+		},{
+			pic:hz7,
+			name:coops.hz7
+		},,{
+			pic:hz14,
+			name:coops.hz14
 		}];
 		let cooperationList=cooperation.map((o,i)=>{
 			return <Box {...o} key={i}/>
@@ -50,13 +75,15 @@ export default class Supportors extends Component{
 		return(
 			<div id="supportors">
 				<div className="supportors_head">
-					<p>合作伙伴</p>
+					<p>{lan.partner}</p>
 					<div>{cooperationList}</div>
 				</div>
-				<div className="supportors_head">
-					<p>赞助商</p>
+				{/*<div className="supportors_head">
+					<p>{lan.sponsor}</p>
 				</div>
+				*/}
 			</div>
 		)
 	}
 }
+export default connect(Supportors)

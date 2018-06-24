@@ -7,17 +7,19 @@ module.exports = merge(baseConfig, {
     devtool: 'inline-source-map',
   	devServer: {
         contentBase: './dist',
-        hot: true
+        hot: true,
+        host: "0.0.0.0"
     },
     plugins:[
         new webpack.HotModuleReplacementPlugin(),
         
         //这些变量不必再import了
-        new webpack.ProvidePlugin({
-            $:'jquery',
-            React:'react',
-            Component:['react','Component'],
-            ReactDOM:'react-dom'
-        })
+        // new webpack.ProvidePlugin({
+        //     $:'jquery',
+        //     React:'react',
+        //     Component:['react','Component'],
+        //     PureComponent:['react','PureComponent'],
+        //     ReactDOM:'react-dom'
+        // })
     ]
 });

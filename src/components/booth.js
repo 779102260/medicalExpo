@@ -1,10 +1,13 @@
 
 import boothCss from '../css/booth.css'
-import b1 from '../images/1.jpg'
-import b2 from '../images/2.png'
-import b3 from '../images/3.png'
+import b1 from '../images/business1.jpg'
+import b2 from '../images/business2.png'
+import b3 from '../images/business3.png'
 
 class Booth extends Component{
+	componentWillReceiveProps(nextProps){
+        window.scrollTo(0,0)
+    }
 	render(){
 		return (
 			<div className="booth">

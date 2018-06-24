@@ -1,48 +1,76 @@
 import {
   Link
 } from 'react-router-dom'
-
+import logo from '../images/logo1.jpg'
+import connect from '../context.js';
 class Menu extends Component{
 	constructor(props){
 		super(props)
 
 		this.click=this.click.bind(this);
-
+		this.toggleMenu=this.toggleMenu.bind(this);
+	}
+	componentDidMount(){
+		this.click();
 	}
 	click(e){
-		let li=e.currentTarget;
-		let lis=li.parentNode.children;
-		for(let x of lis){
-			if(x.className.indexOf('selected')!==-1){
-				x.className='';
+		let lis=document.querySelectorAll('#menu ul li');
+		
+		let selected=false;
+		for(let l=lis.length;l--;){
+			let li=lis[l];
+			let a=li.children[0];
+			let menuName=a.getAttribute('href');
+
+			if(location.href.indexOf(menuName)!==-1 && !selected){
+				li.className+=' selected';
+				selected=true;
+			}else{
+				li.className=li.className.replace('selected',' ');
 			}
+
 		}
-		li.className+='selected';
+		
+
+		document.querySelector('.menuBtn').nextElementSibling.className='';
+
+		document.body.scroll && document.body.scroll(0,0);
+	}
+	toggleMenu(e){
+		let ul=e.currentTarget.nextElementSibling;
+		if(ul.className.indexOf('menuShow')!==-1){
+			ul.className='';
+		}else{
+			ul.className='menuShow';
+		}
 	}
 	render(){
+		let lan=this.props.ctx.lan;
 		return(
 			<div id="menu">
+				<div className="menuBtn" onClick={this.toggleMenu}>
+					<i className="icon-reorder"></i>
+				</div>
 				<ul>
-					<li className="title">大会简介</li>
-					<li className="selected" onClick={this.click}><Link to="/">简介</Link></li>
-					<li className="title">参会</li>
-					<li onClick={this.click}><Link to="/register" className="important">注册</Link></li>
-					<li onClick={this.click}><Link to="/travel">日程</Link></li>
-					<li onClick={this.click}><Link to="/guide">指南</Link></li>
-					<li className="title">赞助</li>
-					<li onClick={this.click}><Link to="/supportors">赞助伙伴</Link></li>
-					<li onClick={this.click}><Link to="/patronageSystem">赞助机制</Link></li>
-					<li className="title">招商</li>
-					<li onClick={this.click}><Link to="/booth">展位规划</Link></li>
-					<li onClick={this.click}><Link to="/business">展位招商</Link></li>
-					<li className="title">专家</li>
-					<li onClick={this.click}><Link to="/register">演讲专家</Link></li>
-					<li onClick={this.click}><Link to="/collection">论文征集</Link></li>
-					<li className="title">展示</li>
+					<li onClick={this.click}><Link to="/">{lan.home}</Link></li>
+					<li onClick={this.click}><Link to="/travel">{lan.travel}</Link></li>
+					<li onClick={this.click}><Link to="/speakers">{lan.speakers}</Link></li>
+					<li onClick={this.click}><Link to="/train">{lan.train}</Link></li>
+					<li onClick={this.click}><Link to="/TechnologyRelease">{lan.TechnologyRelease}</Link></li>
+					<li onClick={this.click}><Link to="/patronageSystem">{lan.patronageSystem}</Link></li>
+					<li onClick={this.click}><Link to="/business">{lan.business}</Link></li>
+					<li onClick={this.click}><Link to="/guide">{lan.guide}</Link></li>
+					<li onClick={this.click} className="_hide"><Link to="/introduction">{lan.introduction}</Link></li>
+					<li onClick={this.click}  className="_hide important"><Link to="/register">{lan.register}</Link></li>
+					<li onClick={this.click}  className="_hide important"><Link to="/organIntroduction"></Link></li>
+					<li onClick={this.click}  className="_hide important"><Link to="/intro2017"></Link></li>
+					<li onClick={this.click}  className="_hide important"><Link to="/intro2018"></Link></li>
+					{/*<li onClick={this.click}><Link to="/supportors">赞助伙伴</Link></li>*/}
+					{/*<li onClick={this.click}><Link to="/booth">展位规划</Link></li>*/}
+					{/*<li onClick={this.click}><Link to="/collection">论文征集</Link></li>
 					<li onClick={this.click}><Link to="/register">创赛成果展示</Link></li>
-					<li onClick={this.click}><Link to="/register">手术成果展示</Link></li>
-					<li className="title">联系我们</li>
-					<li onClick={this.click}><Link to="/contact">联系方式</Link></li>
+					<li onClick={this.click}><Link to="/register">手术成果展示</Link></li>*/}
+					<li onClick={this.click}><Link to="/contact">{lan.contact}</Link></li>
 				</ul>
 			</div>
 		)
@@ -50,4 +78,4 @@ class Menu extends Component{
 }
 
 
-export default Menu
+export default connect(Menu)

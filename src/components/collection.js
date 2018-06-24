@@ -3,7 +3,9 @@ export default class Collection extends Component{
 	constructor(props){
 		super(props)
 	}
-
+	componentWillReceiveProps(nextProps){
+        window.scrollTo(0,0)
+    }
 	render(){
 		let types=[
 			'医疗器械整体发展',

@@ -1,12 +1,16 @@
-
+.boothcase{
+	margin-top: 20Px;
+}
 .booth h3{
-	font-size: 18px;
-	line-height: 20px;
-	border-left: 5px solid #cf202c;
-	padding-left: 10px;
+	font-size: 16Px;
+	line-height: 20Px;
+	border-left: 2Px solid #cf202c;
+	padding-left: 10Px;
+	margin-top: 50px;
 }
 .booth p{
 	margin: 20px 0;
+	line-height: 30Px;
 }
 .b1 img{
     width: 100%;
@@ -16,14 +20,13 @@
 }
 .booth .b2 div{
 	width: 40%;
-	height: 220px;
 	overflow: hidden;
 	display: inline-block;
 	margin-right: 10%;
+	text-align: center;
 }
 .b2 img{
-  width: 100%;
-  height: 100%;
+  width: 80%;
   transition: transform 0.5s;
 }
 .b2 img:hover{
@@ -34,7 +37,7 @@
 }
 .business li{
 	list-style: none;
-	line-height: 28px;
+	line-height: 28Px;
 }
 .business table{
 	width: 100%;

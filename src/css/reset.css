@@ -6,7 +6,11 @@ html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 100px;
+    height: 100%;
+}
+body{
+	height: 100%;
 }
 *, *:before, *:after {
 
@@ -16,9 +20,6 @@ html {
 
     box-sizing: inherit;
 
-}
-input,select,textarea{
-	width: 200px;
 }
 .clearfix:after{ 
 	content: "."; /*内容为“.”*/ 
@@ -30,3 +31,14 @@ input,select,textarea{
 	font-size:0; /*字体大小0*/ 
 } 
 .clearfix{*zoom:1;} /*兼容IE6-*/
+
+/*居中*/
+.relative{
+	position: relative;
+}
+.center_child{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}

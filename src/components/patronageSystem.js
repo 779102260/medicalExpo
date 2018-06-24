@@ -1,151 +1,247 @@
 import boothCss from '../css/booth.css'
-
+import Supportors from './supportors.js'
+import connect from '../context.js';
 class PatronageSystem extends Component{
+	constructor(props){
+		super(props);
+	}
+	componentDidMount(nextProps){
+        window.scrollTo(0,0)
+    }
 	render(){
+		let lan=this.props.ctx.lan;
+		let supportContent=lan.supportContent;
+		let supportContent1=lan.supportContent1;
 		return (
-			<div className="booth psystem">
-				<h3>大会金、银、铜牌赞助</h3>
-				<p>
-					金牌赞助商RMB 500,000  (限1家)、
-					银牌赞助商RMB 300,000 （限5家）、铜牌赞助商RMB 200,000 （限10家）
-				</p>
-				<table>
-					<thead>
-						<tr>
-							<td className="out">
-								<span className="hb">回报</span>
-								<span className="line"></span>
-								<span className="level">赞助等级（人民币）</span>
-							</td>
-							<td>金牌赞助（1）<br/>800,000</td>
-							<td>银牌赞助（5）<br/>500,000</td>
-							<td>铜牌赞助（10 <br/>200,000</td>
-						</tr>
-						<tr>
-							<td>免费标准展位</td>
-							<td>90m2</td>
-							<td>36m2</td>
-							<td>18m2</td>
-						</tr>
-						<tr>
-							<td>免费参会注册名额</td>
-							<td>20</td>
-							<td>10</td>
-							<td>5</td>
-						</tr>
-						<tr>
-							<td>赞助商LOGO展示</td>
-							<td>√</td>
-							<td>√</td>
-							<td>√</td>
-						</tr>
-						<tr>
-							<td>大会主背景板</td>
-							<td>√</td>
-							<td>√</td>
-							<td>√</td>
-						</tr>
-						<tr>
-							<td>大会证件广告</td>
-							<td>√</td>
-							<td>×</td>
-							<td>×</td>
-						</tr>
-						<tr>
-							<td>享有大会至尊合作伙伴荣誉</td>
-							<td>√</td>
-							<td>√</td>
-							<td>√</td>
-						</tr>
-						<tr>
-							<td>名录赞助商网站的链接放在会议网站主页</td>
-							<td>√</td>
-							<td>√</td>
-							<td>√</td>
-						</tr>
-						<tr>
-							<td>主会场暖场及茶歇时间播放赞助商宣传</td>
-							<td>√</td>
-							<td>√</td>
-							<td>√</td>
-						</tr>
-						<tr>
-							<td>会刊中赠送彩色插页广告</td>
-							<td>3</td>
-							<td>2</td>
-							<td>1</td>
-						</tr>
-						<tr>
-							<td>大会资料包插页</td>
-							<td>3</td>
-							<td>2</td>
-							<td>1</td>
-						</tr>
-						<tr>
-							<td>开幕式演讲</td>
-							<td>√</td>
-							<td>×</td>
-							<td>×</td>
-						</tr>
-						<tr>
-							<td>学术论坛演讲</td>
-							<td>×</td>
-							<td>√</td>
-							<td>×</td>
-						</tr>
-						<tr>
-							<td>对接环节项目路演</td>
-							<td>×</td>
-							<td>×</td>
-							<td>√</td>
-						</tr>
-						<tr>
-							<td>欢迎晚宴冠名</td>
-							<td>√</td>
-							<td>×</td>
-							<td>×</td>
-						</tr>
-						<tr>
-							<td>会议期间午餐、晚餐冠名</td>
-							<td>×</td>
-							<td>√</td>
-							<td>×</td>
-						</tr>
-						<tr>
-							<td>茶歇冠名</td>
-							<td>×</td>
-							<td>×</td>
-							<td>√</td>
-						</tr>
-						<tr>
-							<td>贵宾礼遇</td>
-							<td>√</td>
-							<td>√</td>
-							<td>√</td>
-						</tr>
-						<tr>
-							<td>赞助商代表在大会贵宾席就座</td>
-							<td>2人</td>
-							<td>1人</td>
-							<td>1人</td>
-						</tr>
-						<tr>
-							<td>同期活动——专场推介会</td>
-							<td>90分钟</td>
-							<td>45分钟</td>
-							<td>×</td>
-						</tr>
-						<tr>
-							<td>媒体专访</td>
-							<td>√</td>
-							<td>×</td>
-							<td>×</td>
-						</tr>
-					</thead>
-				</table>
+			<div>
+				<div className="booth psystem">
+					<h3 className="boothcase">{supportContent[0]}</h3>
+					<p>
+						{supportContent[1]}
+					</p>
+					<table>
+						<thead>
+							<tr>
+								<td className="out">
+									<span className="hb">{supportContent[2]}</span>
+									{/*<span className="line"></span>*/}
+									<span className="level">{supportContent[3]}</span>
+								</td>
+								<td>{supportContent[4]}<br/>800,000</td>
+								<td>{supportContent[5]}<br/>500,000</td>
+								<td>{supportContent[6]}<br/>200,000</td>
+							</tr>
+							<tr>
+								<td>{supportContent[7]}</td>
+								<td>72m<sup>2</sup></td>
+								<td>36m<sup>2</sup></td>
+								<td>18m<sup>2</sup></td>
+							</tr>
+							<tr>
+								<td>{supportContent[8]}</td>
+								<td>20</td>
+								<td>10</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>{supportContent[9]}</td>
+								<td>√</td>
+								<td>√</td>
+								<td>√</td>
+							</tr>
+							<tr>
+								<td>{supportContent[10]}</td>
+								<td>√</td>
+								<td>√</td>
+								<td>√</td>
+							</tr>
+							<tr>
+								<td>{supportContent[11]}</td>
+								<td>√</td>
+								<td>×</td>
+								<td>×</td>
+							</tr>
+							<tr>
+								<td>{supportContent[12]}</td>
+								<td>√</td>
+								<td>√</td>
+								<td>√</td>
+							</tr>
+							<tr>
+								<td>{supportContent[13]}</td>
+								<td>√</td>
+								<td>√</td>
+								<td>√</td>
+							</tr>
+							<tr>
+								<td>{supportContent[14]}</td>
+								<td>√</td>
+								<td>√</td>
+								<td>√</td>
+							</tr>
+							<tr>
+								<td>{supportContent[15]}</td>
+								<td>3</td>
+								<td>2</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>{supportContent[16]}</td>
+								<td>3</td>
+								<td>2</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>{supportContent[17]}</td>
+								<td>√</td>
+								<td>×</td>
+								<td>×</td>
+							</tr>
+							<tr>
+								<td>{supportContent[18]}</td>
+								<td>×</td>
+								<td>√</td>
+								<td>×</td>
+							</tr>
+							<tr>
+								<td>{supportContent[19]}</td>
+								<td>×</td>
+								<td>×</td>
+								<td>√</td>
+							</tr>
+							<tr>
+								<td>{supportContent[20]}</td>
+								<td>√</td>
+								<td>×</td>
+								<td>×</td>
+							</tr>
+							<tr>
+								<td>{supportContent[21]}</td>
+								<td>×</td>
+								<td>√</td>
+								<td>×</td>
+							</tr>
+							<tr>
+								<td>{supportContent[22]}</td>
+								<td>×</td>
+								<td>×</td>
+								<td>√</td>
+							</tr>
+							<tr>
+								<td>{supportContent[23]}</td>
+								<td>√</td>
+								<td>√</td>
+								<td>√</td>
+							</tr>
+							<tr>
+								<td>{supportContent[24]}</td>
+								<td>2</td>
+								<td>1</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>{supportContent[25]}</td>
+								<td>{'90'+lan.minute}</td>
+								<td>{'45'+lan.minute}</td>
+								<td>×</td>
+							</tr>
+							<tr>
+								<td>{supportContent[26]}</td>
+								<td>√</td>
+								<td>×</td>
+								<td>×</td>
+							</tr>
+						</thead>
+					</table>
+					<h3 className="boothcase">{supportContent1[0]}</h3>
+					<table>
+						<thead>
+							<tr>
+								<td>
+									{supportContent1[1]}
+								</td>
+								<td>{supportContent1[2]}</td>
+								<td>{supportContent1[3]}</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>{supportContent1[4]}</td>
+								<td>
+									{
+										supportContent1[5].map((item,i)=>{
+											return <p key={i}>{item}</p>
+										})
+									}
+								</td>
+								<td>￥60,000.00</td>
+							</tr>
+							<tr>
+								<td>{supportContent1[6]}</td>
+								<td>
+									{
+										supportContent1[7].map((item,i)=>{
+											return <p key={i}>{item}</p>
+										})
+									}
+								</td>
+								<td>￥50,000.00</td>
+							</tr>
+							<tr>
+								<td>{supportContent1[8]}</td>
+								<td>
+									{
+										supportContent1[9].map((item,i)=>{
+											return <p key={i}>{item}</p>
+										})
+									}
+								</td>
+								<td>￥100,000.00</td>
+							</tr>
+							<tr>
+								<td>{supportContent1[10]}</td>
+								<td>
+									{
+										supportContent1[11].map((item,i)=>{
+											return <p key={i}>{item}</p>
+										})
+									}
+								</td>
+								<td>￥150,000.00</td>
+							</tr>
+							<tr>
+								<td>{supportContent1[12]}</td>
+								<td>
+									{
+										supportContent1[13].map((item,i)=>{
+											return <p key={i}>{item}</p>
+										})
+									}
+								</td>
+								<td>￥20,000.00</td>
+							</tr>
+							<tr>
+								<td>{supportContent1[14]}</td>
+								<td>
+									{
+										supportContent1[15].map((item,i)=>{
+											return <p key={i}>{item}</p>
+										})
+									}
+								</td>
+								<td>
+									<p>￥20,000.00</p>
+									<p>￥20,000.00</p>
+									<p>￥10,000.00</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<Supportors />
 			</div>
 		)
 	}
 }
 
-export default PatronageSystem
+export default connect(PatronageSystem)

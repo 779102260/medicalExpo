@@ -1,53 +1,52 @@
+import connect from '../context.js';
 
 
-
-export default class Contact extends Component{
+class Contact extends Component{
 	constructor(props){
 		super(props)
 	}
-
+	componentWillReceiveProps(nextProps){
+        window.scrollTo(0,0)
+    }
 	render(){
+		let lan=this.props.ctx.lan;
 		return(
 			<div id="contact">
 				<div>
 					<h4 className="contact_title">
-						活动咨询
+						{lan.consulting}
 					</h4>
-
-					<div className="person">
-						<p className="name"><i className="icon-user-md"></i>　修玥</p>
-						<p><i className="icon-phone-sign"></i>　+86-10-13121090728</p>
-						<p><i className="icon-envelope-alt"></i>　xiuyue@ittn.com.cn</p>
-					</div>
-
-					<div className="person">
-						<p className="name">修玥</p>
-						<p><i className="icon-phone-sign"></i>　+86-10-13121090728</p>
-						<p><i className="icon-envelope-alt"></i>　xiuyue@ittn.com.cn</p>
-					</div>
+					{
+						lan.consultings.map((item,i)=>{
+							return (
+								<div className="person" key={i}>
+									<p className="name"><i className="icon-user-md"></i>{item[0]}</p>
+									<p><i className="icon-phone-sign"></i>{item[1]}</p>
+									<p><i className="icon-envelope-alt"></i>{item[2]}</p>
+								</div>
+							)
+						})
+					}
 				</div>
 				<div>
 					<h4 className="contact_title">
-						招商咨询
+						{lan.Investment}
 					</h4>
-					<div className="person">
-						<p className="name"><i className="icon-user-md"></i>　修玥</p>
-						<p><i className="icon-phone-sign"></i>　+86-10-13121090728</p>
-						<p><i className="icon-envelope-alt"></i>　xiuyue@ittn.com.cn</p>
-					</div>
-					<div className="person">
-						<p className="name"><i className="icon-user-md"></i>　修玥</p>
-						<p><i className="icon-phone-sign"></i>　+86-10-13121090728</p>
-						<p><i className="icon-envelope-alt"></i>　xiuyue@ittn.com.cn</p>
-					</div>
-					<div className="person">
-						<p className="name"><i className="icon-user-md"></i>　修玥</p>
-						<p><i className="icon-phone-sign"></i>　+86-10-13121090728</p>
-						<p><i className="icon-envelope-alt"></i>　xiuyue@ittn.com.cn</p>
-					</div>
+					{
+						lan.Investments.map((item,i)=>{
+							return (
+								<div className="person" key={i}>
+									<p className="name"><i className="icon-user-md"></i>{item[0]}</p>
+									<p><i className="icon-phone-sign"></i>{item[1]}</p>
+									<p><i className="icon-envelope-alt"></i>{item[2]}</p>
+								</div>
+							)
+						})
+					}
 				</div>
 			</div>
 
 		)
 	}
 }
+export default  connect(Contact)
