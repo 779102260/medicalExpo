@@ -432,3 +432,28 @@ body{
 		}
 	}
 }
+
+#context #contact{
+	& .contact_title{
+		padding: 5px 10px;
+		border-left: 2Px solid var(--secColor);
+		color: var(--secColor);
+	}
+
+	& >div{
+		margin-bottom: 50px;
+	}
+
+	& .person{
+		padding: 20px;
+	    box-shadow: 0 0 2px 0 #ccc;
+   	 	margin: 10px;
+		
+		& p{
+			line-height: 30px;
+		}
+		& .name{
+			font-size: 16px;
+		}
+	}
+}
